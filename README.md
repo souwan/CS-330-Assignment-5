@@ -20,6 +20,8 @@ The following text will be instructions in how to replicate this project step by
     
     The workloads you need to have installed on Visual studio 2019 is the .NET desktop development kit. And as instructed in downloading the Cosmos user kit, make sure to have the .NET Framework 4.6.2 development tools downloaded as well. If you are not sure you have these downloaded, you can check by going into your Visual Studio Installer and click on the "Modify" option for Visual Studio 2019. If you don't remember how to access the Installer, an alternative measure to open it is to go to "Create a new project." If you scroll all the way down, a message stating "Not finding what you're looking for?" will direct you to the Installer page.
     
+    You shouldn't need to touch the VMWare directly for this project. Running the Cosmos code, even the default, will automatically open up VMWare and execute the code. Any errors will simply give you an error prompt or automatically shut down VMware. 
+    
 2. Creating the project///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   If you downloaded the Cosmos user kit, 3 project templates named "Cosmos Template" should appear. We will be using the C# Cosmos kernel. For some reason my C# is seperated from the other two. Just search Cosmos using the search for templates if you can't find it. 
@@ -34,13 +36,13 @@ To allow Cosmos to use a FAT file system similar to how windows operates, we are
 
 The rest of the project isn't too complicated but it definately took me a long time to figure out how to use the FAT system let alone finding it and out how to implement it into Cosmos. If you want to try and do the rest yourself from scratch, here's a link to the microsost documentation for .NET I/O functions: https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.6.2
 
-If you want to follow along my train of thought for my code, please read the following. Keep in mind there is most likely a better way to implement this type of file system, but god knows no one is sharing that pubicly. Not that I found anyways, would have saved me 15 hours how to figure out Cosmos.
+If you want to follow along my train of thought for my code, please read the following. Keep in mind there is most likely a better way to implement this type of file system, but god knows no one is sharing that pubicly. Not that I found anyways, would have saved me ~15 hours trying to figure out how Cosmos works.
 
 The aproach I took was to make it act similarly to standard terminal commands. To be able to type and for the system to seperate the string into seperate strings, so that I could determine what the command is and what the path(s) are, I created a string to save the ReadLine and then created a string[] that took the string and used the Split method to seperate them. This allowed me to create a switch case where string[0] was the command and would be the cases I would be looking for. Example switch(string[0])... case "ls": ... This would technically allow the user to type whatever they wanted after satisfying the commands required amount of strings, intended or not. But also allow me to check the additional string for commands that require additional information, such as "cd directory" or "copy file1 file2" by checking string[1] or string[2].
 
-Implementing the basic shell commands was relatively easy, all I needed to do was to look at the documentation on the microsoft website. The only obstacle, that took me some time to figure out, was to make sure the directory paths were correct. 
+Implementing the basic shell commands is fairly self explanatory, all you need to do is look at the documentation on the microsoft website for the functions that you want to make. The only obstacle, that took me some time to figure out, was to make sure the directory paths were correct. 
 
-The code should be accessible.
+The code in Kernel.cs (attached in the github) should work fine so long as you have the Cosmos project template. Thanks for following along my project and I hope you enjoy the rest of your day.
        
     
     
