@@ -14,8 +14,8 @@ The following text will be instructions in how to replicate this project step by
     
     First we need to download everything. Here are the links that I used to download the resources.
     
-    Visual Studio 2019                 https://visualstudio.microsoft.com/vs/
-    Cosmos user kit v20190628          https://github.com/CosmosOS/Cosmos/releases/tag/Userkit_20190628
+    Visual Studio 2019                 https://visualstudio.microsoft.com/vs/ 
+    Cosmos user kit v20190628          https://github.com/CosmosOS/Cosmos/releases/tag/Userkit_20190628 
     VMWare 15.5                        https://www.vmware.com/ca/products/workstation-player/workstation-player-evaluation.html
     
     The workloads you need to have installed on Visual studio 2019 is the .NET desktop development kit. And as instructed in downloading the Cosmos user kit, make sure to have the .NET Framework 4.6.2 development tools downloaded as well. If you are not sure you have these downloaded, you can check by going into your Visual Studio Installer and click on the "Modify" option for Visual Studio 2019. If you don't remember how to access the Installer, an alternative measure to open it is to go to "Create a new project." If you scroll all the way down, a message stating "Not finding what you're looking for?" will direct you to the Installer page.
