@@ -4,9 +4,7 @@ Caleb VongPhit
 
 200367739
 
-Implementing a file I/O system in Cosmos using C#
-      -Not much of a challenge but I don't know what else to do. I just need pity marks :((
-
+Implementing a directory and file I/O system in Cosmos using C#
 
 The following text will be instructions in how to replicate this project step by step.
 
@@ -32,14 +30,17 @@ The following text will be instructions in how to replicate this project step by
   
 3. Replicating The project////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  Since we are going to be working with File I/O operations and directories, we will need to be added the following line of code:
-  
-    using System.IO;
-    
-  This will provide us with the necessary libraries that will give us access to implementing I/O operations as well as directory management.
-    
+To allow Cosmos to use a FAT file system similar to how windows operates, we are going to need to initialize the virtual disk space. Follow this links instructions: https://csos-guide-to-cosmos.fandom.com/wiki/Making_our_OS_-_Filesystem
 
-    
+The rest of the project isn't too complicated but it definately took me a long time to figure out how to use the FAT system let alone finding it and out how to implement it into Cosmos. If you want to try and do the rest yourself from scratch, here's a link to the microsost documentation for .NET I/O functions: https://docs.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.6.2
+
+If you want to follow along my train of thought for my code, please read the following. Keep in mind there is most likely a better way to implement this type of file system, but god knows no one is sharing that pubicly. Not that I found anyways, would have saved me 15 hours how to figure out Cosmos.
+
+The aproach I took was to make it act similarly to standard terminal commands. To be able to type and for the system to seperate the string into seperate strings, so that I could determine what the command is and what the path(s) are, I created a string to save the ReadLine and then created a string[] that took the string and used the Split method to seperate them. This allowed me to create a switch case where string[0] was the command and would be the cases I would be looking for. Example switch(string[0])... case "ls": ... This would technically allow the user to type whatever they wanted after satisfying the commands required amount of strings, intended or not. But also allow me to check the additional string for commands that require additional information, such as "cd directory" or "copy file1 file2" by checking string[1] or string[2].
+
+Implementing the basic shell commands was relatively easy, all I needed to do was to look at the documentation on the microsoft website. The only obstacle, that took me some time to figure out, was to make sure the directory paths were correct. 
+
+The code should be accessible.
        
     
     
