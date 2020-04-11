@@ -42,7 +42,7 @@ The aproach I took was to make it act similarly to standard terminal commands. T
 
 Implementing the basic shell commands is fairly self explanatory, all you need to do is look at the documentation on the microsoft website for the functions that you want to make. The only obstacle, that took me some time to figure out, was to make sure the directory paths were correct. 
 
-The code in Kernel.cs (attached in the github) should work fine so long as you have the Cosmos project template. Thanks for following along my project and I hope you enjoy the rest of your day.
+The code in Kernel.cs (attached in the github) should work fine so long as you have the Cosmos project template. Copy the code in your Cosmos project template and see the basic commands work with your own eyes! Thanks for following along my project and I hope you enjoy the rest of your day!
        
     
     
